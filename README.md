@@ -20,7 +20,12 @@ Implementation2: Vanilla javascript + jsonp protocol + bootstrap + Yahoo Pipes A
     And the callback function name changes as well. So now it is: CallbackRegistry.dataHandlerCallback
 
 Implementation3: jquery + jquery templates + bootstrap + NewYork Times API
+
     Using jQuery library for manipulating the DOM and AJAX request.
     And also using jquery templates plugin for rendering the posts using templates and avoiding the js to generate
     code and DOM nodes without "templating".
 
+Implementation4: angular + angular-material + NewYork Times API.
+
+    Using $http.get() to make an asynchronous http request ang load data from NewYork Times API resource.
+    Angular material framework was used to make a layout in material style.
