@@ -1,6 +1,6 @@
 var CallbackRegistry = {},
-    url = "http://pipes.yahoo.com/pipes/pipe.run?_id=e9a2e77dffb3205d035c4e311d77bbe6&_render=json&_callback=CallbackRegistry.dataHandlerCallback";
 
+    url = "http://pipes.yahoo.com/pipes/pipe.run?_id=e9a2e77dffb3205d035c4e311d77bbe6&_render=json&_callback=CallbackRegistry.dataHandlerCallback";
 
 function makeScriptRequest(url, dataHandler, errorHandler){
 
@@ -64,7 +64,7 @@ function main(){
         console.log(data);
 
         var postsParameters = items.map(function(item){ //for each retrieved item we create an object and
-            // store its properties to render it further
+                                                        // store its properties to render it further
             return { //here we can add some more parameters to add to the posts
                 title: item.title,                //post title
                 description: item.description,    //post description
@@ -77,9 +77,10 @@ function main(){
         postsParameters.forEach(function(post) { //rendering all posts
             renderPost(post);
         });
+
     }, function (url) {
         console.log("Cannot load data from the " + url); //In case we've got an error
     });
 }
 
-window.addEventListener('load', main, false);            //executes main function once the window is loaded
+window.addEventListener('load', main, false);  //executes main function once the window is loaded
