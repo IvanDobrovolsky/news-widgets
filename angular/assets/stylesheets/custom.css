@@ -1,0 +1,16 @@
+.carddemoBasicUsage md-card {
+    min-height: 150px;
+}
+.widget-container md-card{
+    margin-bottom: 100px;
+}
+header{
+    text-align: center;
+}
+
+@media screen and (min-width: 992px){
+    .widget-container{
+        width: 992px;
+        margin: 0 auto;
+    }
+}

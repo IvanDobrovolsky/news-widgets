@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- A title and a favicon of the application-->
+    <title>News widget</title>
+    <link rel="shortcut icon" href="assets/images/favicon.ico"/>
+
+    <!-- Stylesheets-->
+    <link rel="stylesheet" href="assets/stylesheets/custom.css"/>
+    <link rel="stylesheet" href="assets/stylesheets/angular-material.min.css"/>
+
+
+    <!-- Library scripts -->
+    <script src="assets/scripts/angular.min.js"></script>
+    <script src="assets/scripts/angular-animate.js"></script>
+    <script src="assets/scripts/angular-aria.min.js"></script>
+    <script src="assets/scripts/angular-material.min.js"></script>
+
+
+    <!-- Application scripts -->
+    <script src="app/app.js"></script>
+
+    <!-- Controllers -->
+    <script src="app/widget.controller.js"></script>
+</head>
+<body ng-app="widget">
+<header>
+    <button class=" md-button md-raised">
+        <p class="md-display-1">NewYork times news widget</p>
+    </button>
+    <p class="md-body-2-2">
+        This widget was developed using AngularJS and AngularMaterial framework  for creating material design UI.
+    </p>
+    <p class="md-body-1-1"> Note: Here you can read last most popular post about movies.</p>
+</header>
+
+<!-- Widget container! -->
+<div class="widget-container" ng-cloak ng-controller="WidgetController" >
+    <md-content>
+        <md-card ng-repeat="post in posts" layout="column">
+            <img ng-src="{{post.imageUrl}}"/>
+            <md-card-content>
+                <h2 class="md-title">{{post.title}}</h2>
+                <p>{{post.description}}</p>
+                <p>{{post.date | date}}</p>
+            </md-card-content>
+            <div class="md-actions" layout="row" layout-align="end center">
+                <a href="{{post.link}}" target="_blank"><md-button class="md-primary md-raised">Read more...</md-button></a>
+            </div>
+        </md-card>
+    </md-content>
+</div>
+</body>
+</html>

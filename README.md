@@ -9,7 +9,6 @@ Implementation1: Vanilla javascript + bootstrap + NewYork Times API
     Of course, error handling is implemented as well.
 
 
-
 Implementation2: Vanilla javascript + jsonp protocol + bootstrap + Yahoo Pipes API
 
     Using JSONP protocol. It works in the following way.
@@ -25,4 +24,3 @@ Implementation3: jquery + jquery templates + bootstrap + NewYork Times API
     And also using jquery templates plugin for rendering the posts using templates and avoiding the js to generate
     code and DOM nodes without "templating".
 
- 
