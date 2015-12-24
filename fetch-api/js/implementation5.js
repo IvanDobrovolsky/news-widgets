@@ -6,18 +6,53 @@
         return Handlebars.compile(templateScript)(data);
     }
 
+    function getData(url){
+        return fetch(url);
+    }
+
+    function parseResponse(data){
+        return data.results.map(function (post) {
+            return {
+                link: post.url,
+                imageUrl: (((post.media[0])["media-metadata"])[2]).url,
+                imageWidth: (((post.media[0])["media-metadata"])[2]).width,
+                description: post.abstract,
+                title: post.title,
+                date: post.published_date
+            }
+        })
+    }
+
 
     function main(){
-        var postTemplate = document.getElementById('post-template').innerHTML,
+
+        var apiUrl = "http://api.nytimes.com/svc/mostpopular/v2/mostviewed/movies/30.json?api-key=52c786f7d5fcb689e304bcbd58687057%3A5%3A73132144",
+            postTemplate = document.getElementById('post-template').innerHTML,
             postContainer = document.getElementsByClassName('widget-container')[0];
 
-        var data =  {
-            posts: [{description: 1}, {description: 2}, {description: 3}]
-        };
 
-        console.log(compileTemplate(postTemplate, data));
+        getData(apiUrl)
+            //Response handler
+            .then(
+                function (response){
+                    if (response.status !== 200) {
+                        console.log('Looks like there was a problem. Status Code: ' +
+                            response.status);
+                        return;
+                    }
 
-        postContainer.innerHTML = compileTemplate(postTemplate, data);
+                    response.json().then(function (data) {
+                        postContainer.innerHTML = compileTemplate(postTemplate, {posts: parseResponse(data)});
+                    })
+                }
+            )
+            //Error handler
+            .catch(function (error) {
+                console.error("Something went wrong: " + error);
+            })
+            .finally(function () {
+                console.log("The process is finished!");
+            })
     }
 
     //Main function executes once the page is loaded
