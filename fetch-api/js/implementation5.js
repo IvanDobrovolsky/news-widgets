@@ -6,10 +6,12 @@
         return Handlebars.compile(templateScript)(data);
     }
 
+    //The function makes a request using Fetch API
     function getData(url){
         return fetch(url);
     }
 
+    //Function that parses response and retrieves needed data from it
     function parseResponse(data){
         return data.results.map(function (post) {
             return {
@@ -35,12 +37,14 @@
             //Response handler
             .then(
                 function (response){
+                    //If a response is not successful
                     if (response.status !== 200) {
                         console.log('Looks like there was a problem. Status Code: ' +
                             response.status);
                         return;
                     }
 
+                    //Handling response data
                     response.json().then(function (data) {
                         postContainer.innerHTML = compileTemplate(postTemplate, {posts: parseResponse(data)});
                     })
@@ -57,4 +61,5 @@
 
     //Main function executes once the page is loaded
     main();
+
 }());
