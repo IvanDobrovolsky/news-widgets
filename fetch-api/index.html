@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>newsWidget</title>
+
+    <!-- Library stylesheets/scripts-->
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/handlebars.js"></script>
+</head>
+<body>
+<header>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Recent news</h1>
+            <p>This in a news widget made using plain JavaScript, Fetch API, Handlebars template engine and NewYork Times API</p>
+        </div>
+    </div>
+</header>
+
+<div class="container">
+    <div class="row widget-container">
+    </div>
+</div>
+
+<!-- Handlebars template -->
+<script type="text/x-handlebars-template" id="post-template">
+
+    {{#each posts}}
+    <div class="single-post">
+        <a href="{{link}}" class="thumbnail">
+            <h1>{{title}}</h1>
+            <img src="{{imageUrl}}" alt=""/>
+            <p>{{description}}</p>
+            <p>{{date}}</p>
+        </a>
+    </div>
+    {{/each}}
+</script>
+
+<!-- Fetch API, Handlebars JavaScript implementation  -->
+<script src="js/implementation5.js"></script>
+</body>
+</html>
