@@ -29,3 +29,8 @@ Implementation4: angular + angular-material + NewYork Times API.
 
     Using $http.get() to make an asynchronous http request ang load data from NewYork Times API resource.
     Angular material framework was used to make a layout in material style.
+
+
+Implementation5: Plain JavaScript + Handlebars + Fetch API + NewYork Times API.
+
+    Using fetch API which returns a promise and handling it in a needed way. Also Handlebars were used to simplify rendering data.
