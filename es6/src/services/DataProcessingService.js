@@ -1,5 +1,5 @@
 
-export default class DataProcessor{
+export default class DataProcessingService{
     handle(){
         console.log('dataprocessor works..')
     }
