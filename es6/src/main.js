@@ -2,9 +2,16 @@
 import {API_URL, MAX_POSTS_COUNT} from './config';
 import DataProcessingService from './services/DataProcessingService';
 import AjaxService from './services/AjaxService';
+import TemplateService from 'services/TemplateService'
+import Post from './Post';
 
 let dataProcessingService = new DataProcessingService();
-let ajaxService = new AjaxService();
+let apiAjaxService = new AjaxService(API_URL);
+let post = new Post(["JavaScript"]);
 
 dataProcessingService.handle();
-ajaxService.makeAjaxCall();
+
+apiAjaxService
+    .makeAjaxRequest()
+        .then((results) => console.log(results))
+        .catch((status) => console.log(`Service respond with status code: ${status}`));
