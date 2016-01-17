@@ -1,0 +1,20 @@
+{
+  "name": "es6-implementation",
+  "version": "1.0.0",
+  "description": "This is the next implementation of news widget using modern javascript(es2015) features.",
+  "main": "webpack.config.js",
+  "dependencies": {},
+  "devDependencies": {
+    "babel-core": "^6.4.0",
+    "babel-loader": "^6.2.1",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "path": "^0.12.7",
+    "webpack": "^1.12.11"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ivan Dobrovolsky",
+  "license": "ISC"
+}
