@@ -2,7 +2,7 @@
 import {API_URL, MAX_POSTS_COUNT} from './config';
 import DataProcessingService from './services/DataProcessingService';
 import AjaxService from './services/AjaxService';
-import TemplateService from 'services/TemplateService'
+import TemplateService from './services/TemplateService'
 import Post from './Post';
 
 let dataProcessingService = new DataProcessingService();
@@ -14,4 +14,4 @@ dataProcessingService.handle();
 apiAjaxService
     .makeAjaxRequest()
         .then((results) => console.log(results))
-        .catch((status) => console.log(`Service respond with status code: ${status}`));
+        .catch((error) => console.log(`Error: ${error}`));

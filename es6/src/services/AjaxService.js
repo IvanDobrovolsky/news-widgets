@@ -14,11 +14,14 @@ export default class AjaxService{
                 if(request.readyState == 4){
                     let status = request.status;
                     if(status == 200){
-                        resolve(JSON.parse(request.responseText).results); //parsing the json document to js object
+                        resolve(JSON.parse(request.responseText).results);
                     }else{
-                       reject(status);   //reject if error
+                       reject(new Error(status));
                     }
                 }
+            };
+            request.onerror = function(){
+                reject(new Error("Error fetching results!"))
             };
             request.send();
 
