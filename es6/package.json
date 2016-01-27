@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "This is the next implementation of news widget using modern javascript(es2015) features.",
   "main": "webpack.config.js",
+  "scripts": {
+    "webpack": "webpack --watch"
+  },
   "dependencies": {
     "bootstrap": "^3.3.6"
   },
