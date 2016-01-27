@@ -51,5 +51,6 @@ module.exports = {
                 from: options.css, to: '/css'
             }
         ])
-    ]
+    ],
+    devtool: 'source-map'
 };
