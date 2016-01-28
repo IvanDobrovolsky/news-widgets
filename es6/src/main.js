@@ -1,31 +1,25 @@
 
-import {API_URL, MAX_POSTS_COUNT} from './config';
+import {API_URL} from './config';
 import DataParsingService from './services/DataParsingService';
 import AjaxService from './services/AjaxService';
-import TemplateService from './services/TemplateService'
 import Post from './Post';
 
-
-let apiAjaxService = new AjaxService(API_URL);
-let post = new Post();
-console.log(post.compile({
-    title: "Hello!"
-}));
+let apiAjaxService = new AjaxService(API_URL);     //Ajax service instance to the API data vendor
+let dataParsingService = new DataParsingService();
 
 let container = document.querySelector('.widget-container');
 
-post.render();
 apiAjaxService
     .makeAjaxRequest()
-        .then((results) => {
-            let dataParsingService = new DataParsingService(results);
-            let posts = dataParsingService.parse();
-            for(let singlePost of posts){
-                let compiled = post.compile(singlePost);
-                console.log(compiled);
-                container.innerHTML += compiled;
+        //Catching api data
+        .then((data) => {
+            let postsObjects = dataParsingService.parse(data.results);
+            for(let postObject of postsObjects){
+                let post = new Post(postObject); //Creating an instance of a post
+                post.render(container);          //Rendering the post
             }
         })
+        //Catching errors
         .catch((error) => {
             throw new Error(error)
         });

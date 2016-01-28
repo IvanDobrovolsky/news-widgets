@@ -1,7 +1,12 @@
+/**
+ @class AjaxService
+ @desc This functionality makes ajax request to the api service and returns needed data
+ */
+
 export default class AjaxService{
 
-    constructor(url){
-        this.url = url;
+    constructor(apiUrl){
+        this.url = apiUrl;
     }
 
     makeAjaxRequest(){
@@ -14,29 +19,12 @@ export default class AjaxService{
                 if(request.readyState == 4){
                     let status = request.status;
                     if(status == 200){
-                        resolve(JSON.parse(request.responseText).results);
+                        resolve(JSON.parse(request.responseText));
                     }else{
                        reject(new Error(status));
                     }
                 }
             };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
             request.onerror = function(){
                 reject(new Error("Error fetching results!"))

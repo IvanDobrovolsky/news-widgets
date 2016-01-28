@@ -1,22 +1,25 @@
+/**
+ @class DataParsingService
+ @desc This functionality parses api service response object and returns a set in an acceptable format
 
+ */
 export default class DataParsingService{
 
-    constructor(posts=[]){
-        this.posts = posts;
+    constructor(){
         this.parsedPosts = new Set();
     }
 
-    parse(){
-        for(let post of this.posts){
-            this.parsedPosts.add({
+    parse(posts){
+        for(let post of posts){
+            let parsedPost = {
                 link: post.url,
                 imageUrl: (((post.media[0])["media-metadata"])[2]).url,
                 description: post.abstract,
                 title: post.title,
                 date: post.published_date
-            });
+            };
+            this.parsedPosts.add(parsedPost);
         }
-
 
         return this.parsedPosts;
     }
