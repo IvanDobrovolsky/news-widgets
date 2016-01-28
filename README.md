@@ -34,3 +34,8 @@ Implementation4: angular + angular-material + NewYork Times API.
 Implementation5: Plain JavaScript + Handlebars + Fetch API + NewYork Times API.
 
     Using fetch API which returns a promise and handling it in a needed way. Also Handlebars were used to simplify rendering data.
+
+
+Implementation6: EcmaScript 6 + Webpack + Bootstrap + NewYork Times API.
+
+    Using some of new features that ES2005 brings to us and webpack as a build engine.
