@@ -20,6 +20,24 @@ export default class AjaxService{
                     }
                 }
             };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
             request.onerror = function(){
                 reject(new Error("Error fetching results!"))
             };
