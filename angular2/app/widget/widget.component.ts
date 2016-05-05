@@ -1,6 +1,8 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {WidgetPost} from './post.component';
 import {Post} from './post.model';
+import {HTTP_PROVIDERS} from '@angular/http';
+import {WidgetService} from './widget.service';
 
 @Component({
     selector: 'widget',
@@ -12,32 +14,19 @@ import {Post} from './post.model';
                         </li>
                     </ul>
                </div>`,
-    directives: [WidgetPost]
+    directives: [WidgetPost],
+    providers: [HTTP_PROVIDERS, WidgetService]
 })
-export class Widget{
+export class Widget implements OnInit{
 
     posts: Post[];
 
-    constructor(){
-        this.posts = [
-            {
-                id: 1,
-                title: "Post1",
-                img: "http://www.w3schools.com/angular/pic_angular.jpg",
-                description: "post1 description",
-                link: "google.com",
-                date: new Date()
-            },
-            {
-                id: 2,
-                title: "Post2",
-                img: "https://angularjs.org/img/angular-u-logo.png",
-                description: "post2 description",
-                link: "google.com",
-                date: new Date()
-            }
-        ]
-    }
+    constructor(private widgetService: WidgetService){}
 
+    ngOnInit(){
+        this.widgetService
+            .getPosts()
+            .subscribe(posts => this.posts = posts, error => console.error(`An error has occurred! ${error}`));
+    }
 
 }
