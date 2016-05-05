@@ -40,6 +40,12 @@ Implementation6: EcmaScript 6 + Webpack + Bootstrap + NewYork Times API.
 
     Using some of new features that ES2005 brings to us and webpack as a build engine.
     
+    
 Implementation7: React.js + ES6 + Webpack + Node.js + React Hot Loader + ESLint + NewYork Times API.  
     
     Using modern stack of technologies for working with react. 
+
+
+Implementation8: Angular2 + ES6 + TypeScript + NewYork Times API.  
+    
+    Using angular2-rc framework and its new and neat features. 
