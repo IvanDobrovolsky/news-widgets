@@ -1,5 +1,5 @@
-import {Component, Input} from '@angular/core';
-import {Post} from './post.model';
+import { Component, Input }  from '@angular/core';
+import { Post }              from './post.model';
 
 @Component({
     selector: 'widget-post',

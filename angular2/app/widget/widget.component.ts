@@ -1,8 +1,8 @@
-import {Component, OnInit} from '@angular/core';
-import {WidgetPost} from './post.component';
-import {Post} from './post.model';
-import {HTTP_PROVIDERS} from '@angular/http';
-import {WidgetService} from './widget.service';
+import { Component, OnInit } from '@angular/core';
+import { WidgetPost }        from './post.component';
+import { Post }              from './post.model';
+import { HTTP_PROVIDERS }    from '@angular/http';
+import { WidgetService }     from './widget.service';
 
 @Component({
     selector: 'widget',
