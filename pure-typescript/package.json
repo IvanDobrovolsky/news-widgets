@@ -1,0 +1,27 @@
+{
+  "name": "pure-typescript-implementation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/app.ts",
+  "scripts": {
+    "start": "webpack && webpack-dev-server --content-base src",
+    "typings": "typings"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IvanDobrovolsky/news-widgets.git"
+  },
+  "author": "Ivan Dobrovolskyi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IvanDobrovolsky/news-widgets/issues"
+  },
+  "homepage": "https://github.com/IvanDobrovolsky/news-widgets#readme",
+  "devDependencies": {
+    "ts-loader": "^0.8.2",
+    "typescript": "^2.0.2",
+    "typings": "^1.3.3",
+    "webpack": "^1.13.2",
+    "webpack-dev-server": "^1.16.1"
+  }
+}
