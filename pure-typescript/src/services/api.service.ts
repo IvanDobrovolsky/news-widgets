@@ -8,11 +8,11 @@ export class ApiService <T> implements IApiService <T> {
 
     }
 
-    private makeApiRequest(): Promise<T[]> {
+    private makeApiRequest (): Promise<T[]> {
         return new Promise((resolve: (data: Array<T>) => void, reject: (status: number) => void): void => {
 
-            let  response: any;
-            let  status: number;
+            let response: any;
+            let status: number;
 
             const xhr = new XMLHttpRequest();
 
@@ -32,7 +32,7 @@ export class ApiService <T> implements IApiService <T> {
         });
     }
 
-    private mapResponseToDataSet(response: Response): Array<T> {
+    private mapResponseToDataSet (response: Response): Array<T> {
         return this.extractionFunction(response);
     }
 }

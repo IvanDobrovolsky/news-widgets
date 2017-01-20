@@ -1,5 +1,5 @@
 export class Post {
-    constructor(
+    constructor (
         public id: number | string,
         public title: string,
         public img: string,

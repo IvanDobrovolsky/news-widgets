@@ -2,6 +2,7 @@ import { API_URL }                  from "./constants";
 import { ApiService, PostsService } from "./services";
 
 class WidgetApp {
+
     private htmlContainer = document.querySelector("content");
 
     constructor (private apiService: ApiService <Post> ) {
@@ -10,7 +11,6 @@ class WidgetApp {
             .then(this.renderPosts.bind(this))
             .catch(this.reportError);
     }
-
 
     private renderPosts (posts: Array<Post>): void {
         for (let post of posts) {
