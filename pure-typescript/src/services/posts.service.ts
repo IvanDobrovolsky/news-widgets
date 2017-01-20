@@ -10,7 +10,7 @@ export class PostsService {
             return {
                 id: index,
                 link: post.url,
-                img: (((post.media[0])["media-metadata"])[2]).url,
+                img: (((post.media[0])["media-metadata"])[1]).url,
                 description: <string>post.abstract,
                 title: post.title,
                 date: <Date>post.published_date
